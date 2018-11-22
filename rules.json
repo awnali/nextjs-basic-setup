@@ -1,0 +1,10 @@
+{
+  "rules": [
+    {
+      "pathname": "/blog",
+      "method": ["GET", "POST", "OPTIONS"],
+      "dest": "http://lunchon.dxb"
+    },
+    { "pathname": "/**", "dest": "http://localhost:3000" }
+  ]
+}
