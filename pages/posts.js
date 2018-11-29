@@ -12,7 +12,9 @@ export default class extends React.Component {
     return (
       <div>
         <h2>Posts with ssr</h2>
-        <ul>{this.props.posts.map(post => <li>{post.title}</li>)}</ul>
+        <ul>
+          {this.props.posts.map(post => <li key={post.id}>{post.title}</li>)}
+        </ul>
       </div>
     );
   }

@@ -8,12 +8,12 @@ export const Layout = ({ children }) => {
       <nav>
         <ul>
           <li>
-            <Link to="/" scroll={false}>
+            <Link route="index" scroll={false}>
               <a>Welcome</a>
             </Link>
           </li>
           <li>
-            <Link1 prefetch href="/Todos">
+            <Link1 prefetch href="/home">
               <a>Home</a>
             </Link1>
           </li>
@@ -24,14 +24,14 @@ export const Layout = ({ children }) => {
             </Link1>
           </li>
           <li>
-            <Link1 prefetch href="/user/2">
+            <Link route="user" params={{ id: 3 }}>
               <a>user</a>
-            </Link1>
+            </Link>
           </li>
           <li>
-            <Link1 prefetch href="/about">
-              <a>About</a>
-            </Link1>
+            <Link prefetch route="about">
+              <a>about</a>
+            </Link>
           </li>
         </ul>
       </nav>

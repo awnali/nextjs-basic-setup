@@ -1,5 +1,4 @@
 export default props => {
-  console.log(props);
   return (
     <div>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
