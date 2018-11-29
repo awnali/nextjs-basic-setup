@@ -1,35 +1,41 @@
 import React from "react";
-import Link from "next/link";
-import { Link1 } from "../routes";
+import Link1 from "next/link";
+import { Link } from "../routes";
 
-export const Layout = props => {
+export const Layout = ({ children }) => {
   return (
     <div>
       <nav>
         <ul>
           <li>
-            <Link href="/">
+            <Link to="/" scroll={false}>
               <a>Welcome</a>
             </Link>
           </li>
           <li>
-            <Link prefetch href="/home/23">
+            <Link1 prefetch href="/Todos">
               <a>Home</a>
-            </Link>
+            </Link1>
+          </li>
+
+          <li>
+            <Link1 prefetch href="/posts">
+              <a>posts</a>
+            </Link1>
           </li>
           <li>
-            <Link prefetch href="/about" scroll={false}>
+            <Link1 prefetch href="/user/2">
+              <a>user</a>
+            </Link1>
+          </li>
+          <li>
+            <Link1 prefetch href="/about">
               <a>About</a>
-            </Link>
-          </li>
-          <li>
-            <Link prefetch href="/test" scroll={false}>
-              <a>test</a>
-            </Link>
+            </Link1>
           </li>
         </ul>
       </nav>
-      {props.children}
+      {children}
     </div>
   );
 };

@@ -1,22 +1,19 @@
 import React from "react";
 import dynamic from "next/dynamic";
-const HomeDetails = dynamic({
-  loader: () => import("../components/HomeDetails"),
+const TodosList = dynamic({
+  loader: () => import("../components/TodosList"),
   loading: () => <p>loading ...</p>,
-  ssr: false
+  ssr: true
 });
 
 class Home extends React.Component {
-  state = { show: false };
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ show: true });
-    }, 3000);
+  static async getInitialProps({ req, jsonPageRes }) {
+    return {};
   }
   render() {
     return (
       <div>
-        <HomeDetails />
+        <TodosList />
       </div>
     );
   }
