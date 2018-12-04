@@ -3,7 +3,7 @@ import fetch from "isomorphic-fetch";
 
 export default class extends React.Component {
   static async getInitialProps({ req, jsonPageRes }) {
-    const res = await fetch("http://jsonplaceholder.typicode.com/posts");
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
     const json = await res.json();
     return { posts: json, res: jsonPageRes };
   }

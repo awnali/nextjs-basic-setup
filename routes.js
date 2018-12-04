@@ -5,4 +5,5 @@ module.exports = routes()
   .add("home")
   .add("posts", "posts")
   .add("user", "/user/:id")
+  .add("blog", "/blog/:id")
   .add("index", "/");
