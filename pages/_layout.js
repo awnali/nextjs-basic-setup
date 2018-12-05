@@ -1,4 +1,5 @@
 import React from "react";
+// import "../static/app.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 

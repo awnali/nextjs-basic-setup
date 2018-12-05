@@ -3,6 +3,7 @@ import Document, { Head, Main, NextScript } from "next/document";
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
+    // console.log(ctx);
     return { ...initialProps };
   }
 
@@ -10,7 +11,10 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <title>My next js app</title>
           <style>{`body { margin: 0 } /* custom! */`}</style>
+          <link rel="stylesheet" href="/static/app.css" />
+          <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,es6,Array.prototype.includes,IntersectionObserver" />
         </Head>
         <body className="custom_class">
           <Main />

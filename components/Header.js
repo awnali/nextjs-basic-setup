@@ -27,12 +27,12 @@ export const Header = props => (
         </Link>
       </li>
       <li>
-        <Link prefetch route="blog" params={{ id: 101 }}>
+        <Link route="blog" params={{ id: 101 }}>
           <a>blog</a>
         </Link>
       </li>
       <li>
-        <Link prefetch route="about">
+        <Link route="about">
           <a>about</a>
         </Link>
       </li>
