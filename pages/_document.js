@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
           <title>My next js app</title>
           <style>{`body { margin: 0 } /* custom! */`}</style>
           <link rel="stylesheet" href="/static/app.css" />
-          <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,es6,Array.prototype.includes,IntersectionObserver" />
+          <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
         </Head>
         <body className="custom_class">
           <Main />
