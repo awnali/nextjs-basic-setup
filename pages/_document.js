@@ -11,7 +11,6 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>My next js app</title>
           <style>{`body { margin: 0 } /* custom! */`}</style>
           <link rel="stylesheet" href="/static/app.css" />
         </Head>

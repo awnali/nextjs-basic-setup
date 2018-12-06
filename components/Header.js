@@ -11,7 +11,7 @@ export const Header = props => (
         </Link>
       </li>
       <li>
-        <Link1 prefetch href="/home">
+        <Link1 href="/home">
           <a>Home</a>
         </Link1>
       </li>
