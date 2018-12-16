@@ -1,11 +1,17 @@
 import React from "react";
 import fetch from "isomorphic-fetch";
 import Head from "next/head";
-export default class extends React.Component {
-  static async getInitialProps({ req, jsonPageRes }) {
+import { connect } from "react-redux";
+class Post extends React.Component {
+  static async getInitialProps({ req, jsonPageRes, reduxStore }) {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
     const json = await res.json();
-    return { posts: json, res: jsonPageRes };
+    console.log("INSIDE INIT", json);
+    return { posts: json, name: "awn" };
+  }
+  constructor(props) {
+    super();
+    console.log("INSIDE CONSTRUCTOR");
   }
 
   render() {
@@ -22,3 +28,9 @@ export default class extends React.Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    postsFromRedux: state.posts
+  };
+};
+export default connect(mapStateToProps)(Post);

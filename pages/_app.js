@@ -1,14 +1,22 @@
 import React from "react";
 import App, { Container } from "next/app";
 import Link from "next/link";
+import { Provider } from "react-redux";
 import Layout from "./_layout";
 import Router from "next/router";
-
-export default class MyApp extends App {
+import withReduxStore from "../lib/with-redux-store";
+class MyApp extends App {
   handleRouteChange = url => {
     console.log("App is changing to: ", url);
   };
+
   componentDidMount() {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/static/sw.js")
+        .then(() => console.log("service worker registered."))
+        .catch(err => console.dir(err));
+    }
     Router.events.on("routeChangeStart", this.handleRouteChange);
     Router.events.on("routeChangeError", (err, url) => {
       if (err.cancelled) {
@@ -29,13 +37,17 @@ export default class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, reduxStore } = this.props;
     return (
       <Container>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Provider store={reduxStore}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
       </Container>
     );
   }
 }
+
+export default withReduxStore(MyApp);
