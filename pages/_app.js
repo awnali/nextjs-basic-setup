@@ -26,8 +26,10 @@ class MyApp extends App {
     Router.beforePopState(({ url, as, options }) => {
       // I only want to allow these two routes!
       alert("route changed");
+      console.log(as);
       if (as !== "/" || as !== "/other") {
         // Have SSR render bad routes as a 404.
+        alert("refreshing");
         window.location.href = as;
         return false;
       }
