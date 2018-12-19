@@ -11,12 +11,7 @@ class MyApp extends App {
   };
 
   componentDidMount() {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/static/sw.js")
-        .then(() => console.log("service worker registered."))
-        .catch(err => console.dir(err));
-    }
+    
     Router.events.on("routeChangeStart", this.handleRouteChange);
     Router.events.on("routeChangeError", (err, url) => {
       if (err.cancelled) {
