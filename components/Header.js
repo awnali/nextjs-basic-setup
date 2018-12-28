@@ -36,6 +36,11 @@ export const Header = props => (
           <a>about</a>
         </Link>
       </li>
+      <li>
+        <Link route="/register/profile">
+          <a>profile</a>
+        </Link>
+      </li>
     </ul>
   </nav>
 );

@@ -6,3 +6,4 @@ routes.add("posts", "posts");
 routes.add("user", "/user/:id");
 routes.add("blog", "/blog/:id");
 routes.add("index", "/");
+routes.add("register/basic-info", "/register/profile");
